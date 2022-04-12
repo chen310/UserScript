@@ -2,7 +2,7 @@
 // @name         NeteasePotPlayer
 // @icon         https://s1.music.126.net/style/favicon.ico?v20180823
 // @namespace    https://github.com/chen310
-// @version      1.1.0
+// @version      1.1.1
 // @description  用 PotPlayer 打开网易云音乐链接进行播放
 // @author       chen310
 // @match        *://music.163.com/song?*
@@ -37,6 +37,7 @@
             '<a class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="PotPlayer" target="_blank" href="${document.documentURI.replace("https", "'
             + fakeProtocol + '").replace("http", "' + fakeProtocol + '")}"><i><em class="ply"></em>PotPlayer</i></a>';
         document.getElementById("m-my-list-detail-play-addto-btn").innerHTML += element;
+        return;
     }
     else if (window.location.href.search("song") != -1) {
         btns = "#content-operation";
