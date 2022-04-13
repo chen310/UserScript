@@ -2,7 +2,7 @@
 // @name         NeteasePotPlayer
 // @icon         https://s1.music.126.net/style/favicon.ico?v20180823
 // @namespace    https://github.com/chen310
-// @version      1.1.1
+// @version      1.2.0
 // @description  用 PotPlayer 打开网易云音乐链接进行播放
 // @author       chen310
 // @match        *://music.163.com/song?*
@@ -16,6 +16,7 @@
 // @match        *://music.163.com/discover/toplist*
 // @match        *://music.163.com/discover/recommend/taste
 // @match        *://music.163.com/my/
+// @match        *://music.163.com/artist/mv?*
 // @grant        none
 // @require      https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js
 // ==/UserScript==
@@ -38,6 +39,10 @@
             + fakeProtocol + '").replace("http", "' + fakeProtocol + '")}"><i><em class="ply"></em>PotPlayer</i></a>';
         document.getElementById("m-my-list-detail-play-addto-btn").innerHTML += element;
         return;
+    }
+    else if (window.location.href.search("/artist/mv") != -1) {
+        $("#m_tabs").after('<div class="m-info"><div id="content-operation" class="btns f-cb" data-type="2"></div></div>')
+        btns = "#content-operation";
     }
     else if (window.location.href.search("song") != -1) {
         btns = "#content-operation";
