@@ -2,7 +2,7 @@
 // @name         NeteasePotPlayer
 // @icon         https://s1.music.126.net/style/favicon.ico?v20180823
 // @namespace    https://github.com/chen310
-// @version      1.2.0
+// @version      1.2.1
 // @description  用 PotPlayer 打开网易云音乐链接进行播放
 // @author       chen310
 // @match        *://music.163.com/song?*
@@ -11,6 +11,7 @@
 // @match        *://music.163.com/playlist?*
 // @match        *://music.163.com/album?*
 // @match        *://music.163.com/djradio?*
+// @match        *://music.163.com/dj?*
 // @match        *://music.163.com/program?*
 // @match        *://music.163.com/artist?*
 // @match        *://music.163.com/discover/toplist*
@@ -63,6 +64,9 @@
         btns = "#content-operation";
     }
     else if (window.location.href.search("djradio") != -1) {
+        btns = "div.btns.f-cb.j-flag";
+    }
+    else if (window.location.href.search("dj") != -1) {
         btns = "div.btns.f-cb.j-flag";
     }
     else if (window.location.href.search("artist") != -1) {
