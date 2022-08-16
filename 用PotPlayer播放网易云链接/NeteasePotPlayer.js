@@ -2,7 +2,7 @@
 // @name         NeteasePotPlayer
 // @icon         https://s1.music.126.net/style/favicon.ico?v20180823
 // @namespace    https://github.com/chen310
-// @version      1.2.1
+// @version      1.2.2
 // @description  用 PotPlayer 打开网易云音乐链接进行播放
 // @author       chen310
 // @match        *://music.163.com/song?*
@@ -27,7 +27,7 @@
 (function () {
     "use strict";
 
-    var fakeProtocol = "rtmp";
+    var fakeProtocol = "potplayer";
     var url = window.location.href.replace("https", fakeProtocol).replace("http", fakeProtocol);
     var element =
         '<a class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="PotPlayer" target="_blank" href="' +
